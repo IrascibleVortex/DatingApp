@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
+//We'll need to get a request from our angular client to hit this controller.
 [ApiController]
 [Route("api/[controller]")]  //  /api/users
 public class UsersController : ControllerBase
@@ -15,6 +16,7 @@ public class UsersController : ControllerBase
         _context = context;
     }
 
+    // this end point needs to be hit in order to get the users.
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() {
 
